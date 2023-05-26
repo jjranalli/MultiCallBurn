@@ -64,7 +64,8 @@ contract MultiCall is AccessControl, ReentrancyGuard {
         emit BatchBurned(msg.sender, tokenIds);
     }
 
-    function checkBalance(uint256 tokenId) public view returns (uint256) {
-        return oxGlassesContract.balanceOf(msg.sender, tokenId);
-    }
+function checkBalance() public view returns (uint256) {
+    return oxGlassesContract.balanceOf(msg.sender);
+  }
+
 }
